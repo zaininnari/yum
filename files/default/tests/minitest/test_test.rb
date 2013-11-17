@@ -48,6 +48,18 @@ describe 'yum::test' do
     end
   end
 
+  describe 'remi-test' do
+    it 'enables the remi-test repository' do
+      assert(repo_enabled('remi-test'))
+    end
+  end
+
+  describe 'remi-php55' do
+    it 'enables the remi-php repository' do
+      assert(repo_enabled('remi-php'))
+    end
+  end
+
   describe 'repoforge' do
     it 'enables the repoforge repository' do
       assert(repo_enabled('rpmforge'))
