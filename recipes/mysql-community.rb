@@ -2,7 +2,7 @@
 #
 # Author:: zaininnari (<zaininnari@gmail.com>)
 # Cookbook Name:: yum
-# Recipe:: remi-test
+# Recipe:: remi-php55
 #
 # Copyright:: Copyright (c) 2011 Opscode, Inc.
 #
@@ -18,19 +18,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe 'yum::epel'
-
-yum_key node['yum']['remi-test']['key'] do
-  url  node['yum']['remi-test']['key_url']
-  action :add
-end
-
-yum_repository 'remi-test' do
+yum_repository 'mysql-community' do
   description "Les RPM de remi en test pour Enterprise Linux #{node['platform_version']} - $basearch"
-  key node['yum']['remi-test']['key']
-  mirrorlist node['yum']['remi-test']['url']
+  mirrorlist node['yum']['mysql-community']['url']
   failovermethod 'priority'
-  includepkgs node['yum']['remi-test']['includepkgs']
-  exclude node['yum']['remi-test']['exclude']
+  includepkgs node['yum']['mysql-community']['includepkgs']
+  exclude node['yum']['mysql-community']['exclude']
   action :create
 end
