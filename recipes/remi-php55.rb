@@ -1,6 +1,6 @@
 # Encoding: utf-8
 #
-# Author:: Takeshi KOMIYA (<i.tkomiya@gmail.com>)
+# Author:: zaininnari (<zaininnari@gmail.com>)
 # Cookbook Name:: yum
 # Recipe:: remi-php55
 #
